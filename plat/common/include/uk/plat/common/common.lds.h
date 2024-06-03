@@ -170,6 +170,7 @@
 	{								\
 		*(.data)						\
 		*(.data.*)						\
+		*(.private.data)			    \
 	} UK_SEGMENT_DATA						\
 	_edata = .;							\
 									\

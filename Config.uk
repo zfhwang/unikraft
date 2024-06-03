@@ -120,6 +120,18 @@ config OPTIMIZE_PIE
 		space by a loader. Some loaders even assume that kernel entrance is
 		relocatable (e.g., EFI).
 
+config OPTIMIZE_SHARED
+	bool "Build shared libs"
+	default n
+	help
+		Build shared segments for use with shared libraries
+
+config OPTIMIZE_PRIVATE
+	bool "Build private segments"
+	default n
+	help
+		Build private segments for use with shared libraries
+
 choice
 	prompt "Debug information level"
 	default DEBUG_SYMBOLS_LVL3
