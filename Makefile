@@ -748,13 +748,7 @@ $(eval $(call verbose_include,$(CONFIG_UK_BASE)/Makefile.uk)) # Unikraft base
 
 ifneq (,$(filter y,$(CONFIG_OPTIMIZE_PRIVATE) $(CONFIG_OPTIMIZE_SHARED)))
 SHARELIB_BASE := $(CONFIG_UK_BASE)/../sharelib
-ifeq ($(CONFIG_OPTIMIZE_SHARED), y)
-LIBKVMPLAT_SRCS-y += $(SHARELIB_BASE)/shared_sec.ld
-endif
-ifeq ($(CONFIG_OPTIMIZE_PRIVATE), y)
 $(eval $(call verbose_include,$(SHARELIB_BASE)/Makefile.uk))
-LIBKVMPLAT_SRCS-y += $(SHARELIB_BASE)/private_sec.ld
-endif
 endif
 
 ifeq ($(call have_clang),y)
