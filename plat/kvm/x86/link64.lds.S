@@ -67,13 +67,12 @@ SECTIONS
 
 	/* Read-only data */
 	. = ALIGN(__PAGE_SIZE);
-	. = 0x1f6000;
+	. = 0x26a000;
 	_rodata = .;
 	.rodata :
 	{
 		*(.rodata)
 		*(.rodata.*)
-		. = 0x1b540;
 	} :rodata
 	_erodata = .;
 

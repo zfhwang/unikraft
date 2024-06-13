@@ -89,6 +89,7 @@
 
 #define EXCEPTION_SECTIONS						\
 	. = ALIGN(__PAGE_SIZE);						\
+	. = 0x2c3000;\
 	__eh_frame_start = .;						\
 	.eh_frame :							\
 	{								\
@@ -122,6 +123,7 @@
 	uk_ctortab_end = .;
 
 #define INITTAB_SECTION							\
+	. = 0x2ce088;\
 	uk_inittab_start = .;						\
 	.uk_inittab :							\
 	{								\
@@ -131,6 +133,7 @@
 
 #define EVENTTAB_SECTION						\
 	. = ALIGN(0x8);							\
+	. = 0x2ce118;\
 	.uk_eventtab :							\
 	{								\
 		KEEP(*(SORT_BY_NAME(.uk_event_*)))			\
@@ -152,6 +155,7 @@
 		*(.tbss.*)						\
 		*(.gnu.linkonce.tb.*)					\
 		*(.tcommon)						\
+		. = 0x158;\
 	}								\
 	/*								\
 	 * NOTE: Because the .tbss section is zero-sized in the final	\
@@ -165,6 +169,7 @@
 #define DATA_SECTIONS							\
 	/* Read-write data (initialized) */				\
 	. = ALIGN(__PAGE_SIZE);						\
+	. = 0x2d0000;\
 	_data = .;							\
 	.data :								\
 	{								\
@@ -172,7 +177,6 @@
 		*(.data.*)						\
 		*(.private.data)				\
 		*(.private.data.*)				\
-		. = 0x124d0;					\
 	} UK_SEGMENT_DATA						\
 	_edata = .;							\
 									\
@@ -183,6 +187,7 @@
 									\
 	/* Read-write data (uninitialized) */				\
 	. = ALIGN(__PAGE_SIZE);						\
+	. = 0x2e4000;\
 	__bss_start = .;						\
 	.bss :								\
 	{								\

@@ -12,7 +12,7 @@ menuconfig LIBUKLIBID
 if LIBUKLIBID
 config LIBUKLIBID_INFO
 	bool "Embedded library metadata"
-	default y
+	default n
 
 	if LIBUKLIBID_INFO
 	menu "Global metadata"

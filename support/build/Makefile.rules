@@ -521,6 +521,18 @@ $(3): $(2)
 	@$(TOUCH) $(3)
 endef
 
+# copy $1:libname,$2:path,$3:fname,$4:target_dir
+define copy =
+$(BUILD_DIR)/$(1)/$(3):
+	$(call verbose_cmd,CP,$(1), \
+	 $(CP) $(2)/$(3) $4)
+
+$(call _chksum_origin,$(1),$(BUILD_DIR)/$(1)/$(3),$(BUILD_DIR)/$(1)/.chksum)
+$(call unarchive,$(1),$(BUILD_DIR)/$(1)/$(3),$(BUILD_DIR)/$(1)/.chksum)
+
+UK_FETCH-y += $(BUILD_DIR)/$(1)/.chksum
+endef
+
 # Downloads an archive from remote and invokes unarchive. The target filename
 # (without path!) is specified
 # fetchas $1:libname,$2:url,$3:target_fname(no_path!)

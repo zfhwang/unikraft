@@ -25,4 +25,4 @@ SECTIONS
 		PROVIDE(_uk_posix_clonetab_end = .);
 	}
 }
-INSERT AFTER .rodata;
+INSERT AFTER .eh_frame_hdr;

@@ -164,7 +164,8 @@ static struct uk_libparam_libdesc UK_LIBPARAM_LIBDESC = {
 
 void _uk_libparam_libsec_register(struct uk_libparam_libdesc *ld);
 
-static void UK_LIBPARAM_LIBDESC_CTOR(void)
+static void UK_LIBPARAM_LIBDESC_CTOR(void) __attribute__((section(".uk_libparam_ctor")));
+void UK_LIBPARAM_LIBDESC_CTOR(void)
 {
 	UK_LIBPARAM_LIBDESC.params_len =
 		(__sz)((__uptr) &UK_LIBPARAM_PARAMSECTION_ENDSYM -

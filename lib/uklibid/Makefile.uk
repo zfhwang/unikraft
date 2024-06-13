@@ -14,7 +14,7 @@ $(LIBUKLIBID_BUILD)/libraries.in.new:
 		     )) \
 		     $(UK_LIBS) $(UK_LIBS-y) \
 		     $(UK_LIBID_EXTRA) $(UK_LIBID_EXTRA-y) \
-		| tr ' ' '\n' > $@)
+		| tr ' ' '\n' | tac > $@)
 
 .PHONY: $(LIBUKLIBID_BUILD)/libraries.in.new
 
