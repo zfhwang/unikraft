@@ -10,7 +10,7 @@
 #include <x86/gsbase.h>
 #include <uk/syscall.h>
 
-void __attribute__((section(".align_funcs"))) ukarch_sysregs_switch_uk(struct ukarch_sysregs *sysregs)
+void ukarch_sysregs_switch_uk(struct ukarch_sysregs *sysregs)
 {
 	UK_ASSERT(sysregs);
 	UK_ASSERT(lcpu_get_current());

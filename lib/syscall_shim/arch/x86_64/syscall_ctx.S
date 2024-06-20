@@ -9,7 +9,6 @@
 #include <uk/syscall.h>
 
 /* Used to pop the contents of a `struct uk_syscall_ctx` off the stack */
-.section .align_funcs,"ax"
 ENTRY(uk_syscall_ctx_popall)
 	/* Do all this with IRQ's disabled, as the final iretq should pop off
 	 * a proper rflags anyway.

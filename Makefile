@@ -750,6 +750,7 @@ ifneq (,$(filter y,$(CONFIG_OPTIMIZE_PRIVATE) $(CONFIG_OPTIMIZE_SHARED)))
 SHARELIB_BASE := $(CONFIG_UK_BASE)/../sharelib
 SHARELIB_LDS_DIR := $(SHARELIB_BASE)/lds
 SHARELIB_SCRIPTS_DIR := $(SHARELIB_BASE)/scripts
+SHARELIB_MAKEFILE_DIR := $(SHARELIB_BASE)/makefiles
 $(eval $(call verbose_include,$(SHARELIB_BASE)/Makefile.uk))
 endif
 

@@ -67,7 +67,7 @@ SECTIONS
 
 	/* Read-only data */
 	. = ALIGN(__PAGE_SIZE);
-	. = 0x26a000;
+	. = 0x266000;
 	_rodata = .;
 	.rodata :
 	{
