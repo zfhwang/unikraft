@@ -67,7 +67,6 @@ SECTIONS
 
 	/* Read-only data */
 	. = ALIGN(__PAGE_SIZE);
-	. = 0x266000;
 	_rodata = .;
 	.rodata :
 	{
@@ -102,9 +101,9 @@ SECTIONS
 	}
 	_ectors = .;
 
-	TLS_SECTIONS
-
 	DATA_SECTIONS
+
+	TLS_SECTIONS
 
 	_end = .;
 

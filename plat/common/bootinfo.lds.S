@@ -8,4 +8,4 @@ SECTIONS {
 		KEEP(*(.uk_bootinfo))
 	}
 }
-INSERT AFTER .data
+INSERT AFTER .tdata
