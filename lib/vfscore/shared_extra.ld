@@ -6,4 +6,4 @@ SECTIONS
         PROVIDE(uk_fslist_end = .);
 	}
 }
-INSERT AFTER .rodata;
+INSERT AFTER .shared.rodata;

@@ -720,6 +720,15 @@ GOCINCLUDES           += -I$(UK_GENERATED_INCLUDES)
 ################################################################################
 # Build rules
 ################################################################################
+# shared config
+ifneq (,$(filter y,$(CONFIG_OPTIMIZE_PRIVATE) $(CONFIG_OPTIMIZE_SHARED)))
+SHARELIB_BASE := $(CONFIG_UK_BASE)/../sharelib
+SHARELIB_LDS_DIR := $(SHARELIB_BASE)/lds
+SHARELIB_SCRIPTS_DIR := $(SHARELIB_BASE)/scripts
+SHARELIB_MAKEFILE_DIR := $(SHARELIB_BASE)/makefiles
+$(eval $(call verbose_include,$(SHARELIB_MAKEFILE_DIR)/Makefile.slibs))
+endif
+
 # external application
 ifneq ($(CONFIG_UK_BASE),$(CONFIG_UK_APP))
 $(eval $(call import_lib,$(CONFIG_UK_APP)));
@@ -747,10 +756,6 @@ $(foreach ITR,$(EPLAT_DIR), \
 $(eval $(call verbose_include,$(CONFIG_UK_BASE)/Makefile.uk)) # Unikraft base
 
 ifneq (,$(filter y,$(CONFIG_OPTIMIZE_PRIVATE) $(CONFIG_OPTIMIZE_SHARED)))
-SHARELIB_BASE := $(CONFIG_UK_BASE)/../sharelib
-SHARELIB_LDS_DIR := $(SHARELIB_BASE)/lds
-SHARELIB_SCRIPTS_DIR := $(SHARELIB_BASE)/scripts
-SHARELIB_MAKEFILE_DIR := $(SHARELIB_BASE)/makefiles
 $(eval $(call verbose_include,$(SHARELIB_BASE)/Makefile.uk))
 endif
 
