@@ -152,6 +152,7 @@
 		*(.tbss.*)						\
 		*(.gnu.linkonce.tb.*)					\
 		*(.tcommon)						\
+		. = 0x128;\
 	}								\
 	/*								\
 	 * NOTE: Because the .tbss section is zero-sized in the final	\

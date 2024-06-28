@@ -25,5 +25,4 @@ SECTIONS
 		PROVIDE(_uk_posix_clonetab_end = .);
 	}
 }
-# 如果这个库是共享的 那么仅由这个库产生的这个段也应该共享
-INSERT AFTER .shared.rodata;
+INSERT AFTER .cluster1.align_vars;

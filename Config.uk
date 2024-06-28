@@ -120,11 +120,25 @@ config OPTIMIZE_PIE
 		space by a loader. Some loaders even assume that kernel entrance is
 		relocatable (e.g., EFI).
 
-config OPTIMIZE_SHARED
+menuconfig OPTIMIZE_SHARED
 	bool "Build shared libs"
 	default n
 	help
 		Build shared segments for use with shared libraries
+
+if OPTIMIZE_SHARED
+	config CLUSTER0
+		bool "cluster 0"
+		default n
+		help
+			cluster 0 for share
+	
+	config CLUSTER1
+		bool "cluster 1"
+		default n
+		help
+			cluster 1 for share
+endif
 
 config OPTIMIZE_PRIVATE
 	bool "Build private segments"
@@ -178,7 +192,7 @@ config OPTIMIZE_WARNISERROR
 
 config OPTIMIZE_SYMFILE
 	bool "Create a symbols file"
-	default n
+	default y
 	help
 		Create a separate file with all symbol locations
 

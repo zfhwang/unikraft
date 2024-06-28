@@ -25,4 +25,4 @@ SECTIONS
 		PROVIDE(_uk_thread_inittab_end = .);
 	}
 }
-INSERT AFTER .shared.rodata;
+INSERT AFTER .cluster1.align_vars;
