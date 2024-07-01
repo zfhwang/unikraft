@@ -6,4 +6,4 @@ SECTIONS
         PROVIDE(uk_fslist_end = .);
 	}
 }
-INSERT AFTER .cluster1.align_vars;
+INSERT AFTER .bss;

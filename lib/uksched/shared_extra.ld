@@ -25,4 +25,4 @@ SECTIONS
 		PROVIDE(_uk_thread_inittab_end = .);
 	}
 }
-INSERT AFTER .cluster1.align_vars;
+INSERT AFTER .bss;

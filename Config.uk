@@ -138,6 +138,24 @@ if OPTIMIZE_SHARED
 		default n
 		help
 			cluster 1 for share
+	
+	config CLUSTER2
+		bool "cluster 2"
+		default n
+		help
+			cluster 2 for share
+	
+	config CLUSTER3
+		bool "cluster 3"
+		default n
+		help
+			cluster 3 for share
+	
+	config CLUSTER4
+		bool "cluster 4"
+		default n
+		help
+			cluster 4 for share
 endif
 
 config OPTIMIZE_PRIVATE

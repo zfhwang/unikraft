@@ -25,4 +25,4 @@ SECTIONS
 		PROVIDE(_uk_posix_clonetab_end = .);
 	}
 }
-INSERT AFTER .cluster1.align_vars;
+INSERT AFTER .bss;

@@ -43,6 +43,18 @@ PHDRS
 	cluster1_text PT_LOAD FLAGS(PHDRS_PF_RX);
 	cluster1_rodata PT_LOAD FLAGS(PHDRS_PF_R);
 #endif
+#if CONFIG_CLUSTER2
+	cluster2_text PT_LOAD FLAGS(PHDRS_PF_RX);
+	cluster2_rodata PT_LOAD FLAGS(PHDRS_PF_R);
+#endif
+#if CONFIG_CLUSTER3
+	cluster3_text PT_LOAD FLAGS(PHDRS_PF_RX);
+	cluster3_rodata PT_LOAD FLAGS(PHDRS_PF_R);
+#endif
+#if CONFIG_CLUSTER4
+	cluster4_text PT_LOAD FLAGS(PHDRS_PF_RX);
+	cluster4_rodata PT_LOAD FLAGS(PHDRS_PF_R);
+#endif
 
 #endif
 #if CONFIG_OPTIMIZE_PRIVATE
