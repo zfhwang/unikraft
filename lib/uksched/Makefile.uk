@@ -14,7 +14,7 @@ LIBUKSCHED_SRCS-y += $(LIBUKSCHED_BASE)/thread.c
 LIBUKSCHED_THREAD_FLAGS-$(call gcc_version_ge,8,0) += -Wno-cast-function-type
 LIBUKSCHED_SRCS-y += $(LIBUKSCHED_BASE)/isrwake.c|isr
 
-ifeq ($(CONFIG_OPTIMIZE_SHARED)_$(LIBUKSCHED_SHARED), y_y)
+ifeq ($(CONFIG_OPTIMIZE_SHARED), y)
 LIBUKSCHED_SRCS-y += $(LIBUKSCHED_BASE)/shared_extra.ld
 else
 LIBUKSCHED_SRCS-y += $(LIBUKSCHED_BASE)/extra.ld

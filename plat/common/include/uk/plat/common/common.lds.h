@@ -144,14 +144,17 @@
 		*(.tdata)						\
 		*(.tdata.*)						\
 		*(.gnu.linkonce.td.*)					\
+		. = 0x4;\
 	} UK_SEGMENT_TLS UK_SEGMENT_TLS_LOAD				\
 	_etdata = .;							\
+	. = ALIGN(0x8);\
 	.tbss :								\
 	{								\
 		*(.tbss)						\
 		*(.tbss.*)						\
 		*(.gnu.linkonce.tb.*)					\
-		*(.tcommon)						\
+		*(.tcommon)\
+		. = 0x158;\
 	}								\
 	/*								\
 	 * NOTE: Because the .tbss section is zero-sized in the final	\

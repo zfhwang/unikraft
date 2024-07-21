@@ -1,5 +1,9 @@
 SECTIONS
 {
+	_thread_inittab_size = SIZEOF(.uk_thread_inittab);
+	_succ_start = . + _thread_inittab_size;
+	_succ_start = ALIGN(0x1000);
+	. = _succ_start - _thread_inittab_size;
 	.uk_thread_inittab : {
 		PROVIDE(_uk_thread_inittab_start = .);
 		KEEP (*(.uk_thread_inittab0))
@@ -25,4 +29,4 @@ SECTIONS
 		PROVIDE(_uk_thread_inittab_end = .);
 	}
 }
-INSERT AFTER .bss;
+INSERT BEFORE .tdata;
