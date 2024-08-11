@@ -722,7 +722,8 @@ GOCINCLUDES           += -I$(UK_GENERATED_INCLUDES)
 ################################################################################
 # shared config
 ifneq (,$(filter y,$(CONFIG_OPTIMIZE_PRIVATE) $(CONFIG_OPTIMIZE_SHARED)))
-SHARELIB_BASE := $(CONFIG_UK_BASE)/../sharelib
+# SHARELIB_BASE := $(CONFIG_UK_BASE)/../sharelib
+SHARELIB_BASE := $(S)
 $(eval $(call verbose_include,$(SHARELIB_BASE)/Makefile.slibs))
 endif
 

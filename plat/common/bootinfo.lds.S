@@ -7,7 +7,5 @@ SECTIONS {
 	{
 		KEEP(*(.uk_bootinfo))
 	}
-	. = ALIGN(16);
-	__bootinfo_end = .;
 }
 INSERT AFTER .tbss
