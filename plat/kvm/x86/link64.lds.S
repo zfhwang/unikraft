@@ -32,54 +32,58 @@ PHDRS
 	rodata PT_LOAD FLAGS(PHDRS_PF_R);
 	data PT_LOAD;
 #if CONFIG_OPTIMIZE_SHARED
-	/*shared_text PT_LOAD FLAGS(PHDRS_PF_RX);*/
-	/*shared_rodata PT_LOAD FLAGS(PHDRS_PF_R);*/
-
+	public_text PT_LOAD FLAGS(PHDRS_PF_RWX);
 #if CONFIG_CLUSTER0
+	cluster0 PT_LOAD FLAGS(PHDRS_PF_RWX);
 	cluster0_text PT_LOAD FLAGS(PHDRS_PF_RX);
 	cluster0_rodata PT_LOAD FLAGS(PHDRS_PF_R);
 #endif
 #if CONFIG_CLUSTER1
+	cluster1 PT_LOAD FLAGS(PHDRS_PF_RWX);
 	cluster1_text PT_LOAD FLAGS(PHDRS_PF_RX);
 	cluster1_rodata PT_LOAD FLAGS(PHDRS_PF_R);
 #endif
 #if CONFIG_CLUSTER2
+	cluster2 PT_LOAD FLAGS(PHDRS_PF_RWX);
 	cluster2_text PT_LOAD FLAGS(PHDRS_PF_RX);
 	cluster2_rodata PT_LOAD FLAGS(PHDRS_PF_R);
 #endif
 #if CONFIG_CLUSTER3
+	cluster3 PT_LOAD FLAGS(PHDRS_PF_RWX);
 	cluster3_text PT_LOAD FLAGS(PHDRS_PF_RX);
 	cluster3_rodata PT_LOAD FLAGS(PHDRS_PF_R);
 #endif
 #if CONFIG_CLUSTER4
+	cluster4 PT_LOAD FLAGS(PHDRS_PF_RWX);
 	cluster4_text PT_LOAD FLAGS(PHDRS_PF_RX);
 	cluster4_rodata PT_LOAD FLAGS(PHDRS_PF_R);
 #endif
 #if CONFIG_CLUSTER5
+	cluster5 PT_LOAD FLAGS(PHDRS_PF_RWX);
 	cluster5_text PT_LOAD FLAGS(PHDRS_PF_RX);
 	cluster5_rodata PT_LOAD FLAGS(PHDRS_PF_R);
 #endif
 #if CONFIG_CLUSTER6
+	cluster6 PT_LOAD FLAGS(PHDRS_PF_RWX);
 	cluster6_text PT_LOAD FLAGS(PHDRS_PF_RX);
 	cluster6_rodata PT_LOAD FLAGS(PHDRS_PF_R);
 #endif
 #if CONFIG_CLUSTER7
+	cluster7 PT_LOAD FLAGS(PHDRS_PF_RWX);
 	cluster7_text PT_LOAD FLAGS(PHDRS_PF_RX);
 	cluster7_rodata PT_LOAD FLAGS(PHDRS_PF_R);
 #endif
 #if CONFIG_CLUSTER8
+	cluster8 PT_LOAD FLAGS(PHDRS_PF_RWX);
 	cluster8_text PT_LOAD FLAGS(PHDRS_PF_RX);
-	cluster8_rodata PT_LOAD FLAGS(PHDRS_PF_R);
+	/* cluster8_rodata PT_LOAD FLAGS(PHDRS_PF_R); */
 #endif
 #if CONFIG_CLUSTER9
+	cluster9 PT_LOAD FLAGS(PHDRS_PF_RWX);
 	cluster9_text PT_LOAD FLAGS(PHDRS_PF_RX);
 	cluster9_rodata PT_LOAD FLAGS(PHDRS_PF_R);
 #endif
 
-#endif
-#if CONFIG_OPTIMIZE_PRIVATE
-	private_text PT_LOAD FLAGS(PHDRS_PF_RX);
-	private_rodata PT_LOAD FLAGS(PHDRS_PF_R);
 #endif
 	tls PT_TLS;
 	tls_load PT_LOAD;

@@ -53,6 +53,7 @@
 
 #define PHDRS_PF_RX (PHDRS_PF_R | PHDRS_PF_X)
 #define PHDRS_PF_RW (PHDRS_PF_R | PHDRS_PF_W)
+#define PHDRS_PF_RWX (PHDRS_PF_R | PHDRS_PF_W | PHDRS_PF_X)
 
 /* DWARF debug sections.  Symbols in the DWARF debugging sections are
  * relative to the beginning of the section so we begin them at 0.

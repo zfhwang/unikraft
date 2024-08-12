@@ -721,7 +721,7 @@ GOCINCLUDES           += -I$(UK_GENERATED_INCLUDES)
 # Build rules
 ################################################################################
 # shared config
-ifneq (,$(filter y,$(CONFIG_OPTIMIZE_PRIVATE) $(CONFIG_OPTIMIZE_SHARED)))
+ifeq ($(CONFIG_OPTIMIZE_SHARED),y)
 # SHARELIB_BASE := $(CONFIG_UK_BASE)/../sharelib
 SHARELIB_BASE := $(S)
 $(eval $(call verbose_include,$(SHARELIB_BASE)/Makefile.slibs))
@@ -753,7 +753,7 @@ $(foreach ITR,$(EPLAT_DIR), \
 )
 $(eval $(call verbose_include,$(CONFIG_UK_BASE)/Makefile.uk)) # Unikraft base
 
-ifneq (,$(filter y,$(CONFIG_OPTIMIZE_PRIVATE) $(CONFIG_OPTIMIZE_SHARED)))
+ifeq ($(CONFIG_OPTIMIZE_SHARED),y)
 $(eval $(call verbose_include,$(SHARELIB_BASE)/Makefile.uk))
 endif
 

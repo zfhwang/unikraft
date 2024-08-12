@@ -74,8 +74,10 @@ posix_socket_family_init(struct posix_socket_driver *d)
 {
 	int rc = 0;
 
-	UK_ASSERT(d);
-	UK_ASSERT(d->ops);
+	// UK_ASSERT(d);
+	// UK_ASSERT(d->ops);
+	if (!d || !d->ops)
+		return rc;
 
 	uk_pr_debug("Installing socket family: %d library: %s (%p)\n",
 		    d->family, d->libname, d->ops);
